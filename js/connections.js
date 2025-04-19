@@ -18,8 +18,8 @@ export function drawConnections(nodes, groups) {
         nodeMap[el.dataset.nodeId] = el.querySelector('.circle');
     });
     const groupMap = {};
-    document.querySelectorAll('.group').forEach(el => {
-        groupMap[el.dataset.groupId] = el.querySelector('.group-circle');
+    document.querySelectorAll('.group-node').forEach(el => {
+        groupMap[el.dataset.groupId] = el.querySelector('.circle');
     });
     const connections = getConnections();
     connections.forEach(conn => {
@@ -33,6 +33,13 @@ export function drawConnections(nodes, groups) {
         if (conn.type === "group") {
             const from = groupMap[conn.group];
             const to = nodeMap[conn.node];
+            if (from && to) {
+                lines.push(new LeaderLine(from, to, { color: conn.color, size: 2 }));
+            }
+        }
+        if (conn.type === "group2user") {
+            const from = nodeMap[conn.user];
+            const to = groupMap[conn.group];
             if (from && to) {
                 lines.push(new LeaderLine(from, to, { color: conn.color, size: 2 }));
             }

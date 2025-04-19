@@ -13,15 +13,14 @@ const groupColors = [
 ];
 export function createGroupDOM(group, isSelected) {
     const el = document.createElement('div');
-    el.className = 'group' + (isSelected ? ' selected' : '');
+    el.className = 'group-node' + (isSelected ? ' selected' : '');
     el.style.top = group.top;
     el.style.left = group.left;
-    el.style.background = group.color;
     el.dataset.groupId = group.id;
 
     const circle = document.createElement('div');
-    circle.className = 'group-circle';
-    circle.style.background = group.color;
+    circle.className = 'circle';
+    circle.style.borderColor = group.color;
     el.appendChild(circle);
 
     const label = document.createElement('div');
@@ -33,7 +32,7 @@ export function createGroupDOM(group, isSelected) {
     return el;
 }
 export function clearGroups() {
-    nodesContainer.querySelectorAll('.group').forEach(el => el.remove());
+    nodesContainer.querySelectorAll('.group-node').forEach(el => el.remove());
 }
 export function randomColor() {
     return groupColors[Math.floor(Math.random()*groupColors.length)];
