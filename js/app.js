@@ -173,10 +173,10 @@ function addGroup(name) {
     groups.push(group);
     setGroups(groups);
 
-    // Always connect group to USER (main node)
+    // Always connect group to USER (main node) with a white line
     if (nodes.length > 0) {
         const userId = nodes[0].id;
-        connections.push({ type: "group2user", group: id, user: userId, color });
+        connections.push({ type: "group2user", group: id, user: userId, color: "white" });
         setConnections(connections);
     }
     render();
