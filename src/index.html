@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Map</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Social Map</h1>
+        <div id="nodes-container"></div>
+    </div>
+
+    <!-- Modal for creating a node -->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <div class="modal-left">
+                <p>Fill out the form to create a new profile bubble with a name, job title, and optional image.</p>
+            </div>
+            <div class="modal-right">
+                <label for="name-input">Name:</label>
+                <input type="text" id="name-input" placeholder="Enter your name" />
+                
+                <label for="job-title-input">Job Title:</label>
+                <input type="text" id="job-title-input" placeholder="Enter your job title" />
+                
+                <label for="image-upload">Upload Image:</label>
+                <input type="file" id="image-upload" accept="image/*" />
+                
+                <button id="confirm-btn">OK</button>
+                <button id="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

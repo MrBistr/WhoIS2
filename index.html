@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <h1 id="main-title">Social Map</h1>
+        <div id="nodes-container"></div>
+
+        <!-- Floating action buttons container -->
+        <div id="floating-buttons">
+            <button id="add-node-fab" class="fab add-node" title="Add Node">+</button>
+            <button id="add-group-btn" class="fab add-group" title="Add Group">G</button>
+        </div>
+
+        <!-- Add Node Form -->
+        <div id="input-form" class="hidden">
+            <h2>Add a Node</h2>
+            <label>Name:
+                <input type="text" id="name-input" placeholder="Enter name" autocomplete="off" />
+            </label>
+            <label>Job Title:
+                <input type="text" id="job-title-input" placeholder="Enter job title" autocomplete="off" />
+            </label>
+            <label>Upload Image:
+                <input type="file" id="image-upload" accept="image/*" />
+            </label>
+            <button id="add-node-btn" class="submit-btn">Add Node</button>
+        </div>
+
+        <!-- Add Group Form -->
+        <div id="group-form" class="hidden">
+            <h2>Add a Group</h2>
+            <label>Group Name:
+                <input type="text" id="group-name-input" placeholder="Enter group name" autocomplete="off" />
+            </label>
+            <button id="create-group-btn" class="submit-btn">Create Group</button>
+        </div>
+    </div>
+    <script src="https://anseki.github.io/leader-line/leader-line.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
